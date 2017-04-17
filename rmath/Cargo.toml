@@ -1,0 +1,10 @@
+[package]
+name = "rmath"
+version = "0.1.0"
+authors = ["Eugene Mihailenco <mihailencoe@gmail.com>"]
+description = "Library for vector math and linear algebra"
+license = "LGPL-3.0"
+keywords = ["vector", "math"]
+
+[dependencies]
+rand = "*"
