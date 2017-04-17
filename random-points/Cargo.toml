@@ -1,0 +1,6 @@
+[package]
+name = "random-points"
+version = "0.1.0"
+authors = ["Eugene Mihailenco <mihailencoe@gmail.com>"]
+
+[dependencies]
