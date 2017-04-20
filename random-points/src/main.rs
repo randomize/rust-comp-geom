@@ -4,7 +4,7 @@ extern crate rand;
 extern crate rmath;
 
 use rmath::vector::Vector2D;
-use rmath::vector::gen_random_points;
+use rmath::alg::gen_random_points;
 use rand::Rng;
 use piston_window::*;
 
@@ -43,9 +43,8 @@ fn main() {
                       [0.0, 0.0, 100.0, 100.0],
                       c.transform, g);
             for p in ar.iter() {
-                let l = p.len();
                 ellipse(black, [p.x * width as f64, p.y * width as f64, dot_size, dot_size],
-                   c.transform, g);
+                        c.transform, g);
             }
         });
     }
