@@ -8,3 +8,4 @@ mod tests {
 }
 
 pub mod vector;
+pub mod alg;

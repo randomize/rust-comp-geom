@@ -20,7 +20,59 @@ impl Vector2D
         f64::sqrt(self.x*self.x + self.y*self.y)
     }
 
+    pub fn normal(&self) -> Vector2D
+    {
+        Vector2D { x:-self.y, y:self.x }
+    }
+
+    pub fn normalized(&self) -> Vector2D
+    {
+        let mut v = self.clone();
+        v.normalize();
+        v
+    }
+
+    pub fn normalize(&mut self)
+    {
+        let l = self.len();
+        self.x /= l;
+        self.y /= l;
+    }
+
+    pub fn scale(&mut self, s: f64) 
+    {
+        self.x *= s;
+        self.y *= s;
+    }
+
+    pub fn dot(a: &Vector2D, b: &Vector2D) -> f64
+    {
+        a.x*b.x + a.y*b.y
+    }
+
+    pub fn det(a: &Vector2D, b: &Vector2D) -> f64
+    {
+        a.x*b.x - a.y*b.y
+    }
+
+    pub fn sub(a: &Vector2D, b: &Vector2D) -> Vector2D
+    {
+        Vector2D{ x: a.x - b.x, y: a.y - b.y }
+    }
 }
+
+/*
+impl std::ops::Add for Vector2D
+{
+    type Output = Vector2D;
+
+    fn add(mut self, _rhs: Vector2D) -> Vector2D {
+        self.x += _rhs.x;
+        self.y += _rhs.y;
+        self
+    }
+
+} */
 
 impl rand::Rand for Vector2D
 {
@@ -37,28 +89,6 @@ impl std::fmt::Display for Vector2D
     }
 }
 
-pub fn gen_random_points(rng: &mut rand::ThreadRng ,n: usize) -> Vec<Vector2D> {
-
-    let mut v = Vec::with_capacity(n);
-    for _ in 0..n  {
-        v.push(rng.gen::<Vector2D>());
-    }
-    v
-}
-
-
-pub fn convex_hull(points: &Vec<Vector2D> ) -> Option<Vec<Vector2D>> {
-
-    if points.len() == 0 {
-        return None;
-    }
-
-    if points.len() <= 3 {
-        return Some(points.clone());
-    }
-
-    return None;
-}
 
 
 
