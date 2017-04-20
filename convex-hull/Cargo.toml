@@ -1,0 +1,10 @@
+[package]
+name = "convex-hull"
+description = "shows some random points on screen and their convex hull"
+version = "0.1.0"
+authors = ["Eugene Mihailenco <mihailencoe@gmail.com>"]
+
+[dependencies]
+rand = "0.3"
+piston_window = "0.61.0"
+rmath = { path = "../rmath" }
