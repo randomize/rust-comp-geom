@@ -52,7 +52,7 @@ impl Vector2D
 
     pub fn det(a: &Vector2D, b: &Vector2D) -> f64
     {
-        a.x*b.x - a.y*b.y
+        a.x*b.y - a.y*b.x
     }
 
     pub fn sub(a: &Vector2D, b: &Vector2D) -> Vector2D
