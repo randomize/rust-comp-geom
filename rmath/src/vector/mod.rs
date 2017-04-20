@@ -5,6 +5,7 @@ extern crate std;
 use self::rand::Rng;
 use std::fmt;
 
+#[derive(Clone)]
 pub struct Vector2D
 {
     pub x: f64,
@@ -44,3 +45,21 @@ pub fn gen_random_points(rng: &mut rand::ThreadRng ,n: usize) -> Vec<Vector2D> {
     }
     v
 }
+
+
+pub fn convex_hull(points: &Vec<Vector2D> ) -> Option<Vec<Vector2D>> {
+
+    if points.len() == 0 {
+        return None;
+    }
+
+    if points.len() <= 3 {
+        return Some(points.clone());
+    }
+
+    return None;
+}
+
+
+
+
