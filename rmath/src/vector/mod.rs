@@ -7,14 +7,14 @@ use std::fmt;
 
 pub struct Vector2D
 {
-    x: f64,
-    y: f64
+    pub x: f64,
+    pub y: f64
 }
 
 impl Vector2D
 {
 
-    fn len(self) -> f64 
+    pub fn len(&self) -> f64 
     {
         f64::sqrt(self.x*self.x + self.y*self.y)
     }
