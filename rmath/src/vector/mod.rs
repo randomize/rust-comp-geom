@@ -5,7 +5,7 @@ extern crate std;
 use self::rand::Rng;
 use std::fmt;
 
-#[derive(Clone)]
+#[derive(Clone,Debug)]
 pub struct Vector2D
 {
     pub x: f64,
